@@ -8,6 +8,10 @@ pipeline {
     options {
         skipStagesAfterUnstable()
     }
+     stage('Initialize'){
+        def dockerHome = tool 'jenkinDocker'
+        env.PATH = "${dockerHome}/bin:${env.PATH}"
+    }
     stages {
         stage('Build') {
             steps {
