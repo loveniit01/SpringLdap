@@ -10,10 +10,7 @@ pipeline {
     }
      
     stages {
-        stage('Initialize'){
-        def dockerHome = tool 'jenkinDocker'
-        env.PATH = "${dockerHome}/bin:${env.PATH}"
-    }
+        
         
         stage('Build') {
             steps {
